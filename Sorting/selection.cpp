@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+void selection(int n, int ar[]){
+    int midIdx=0;
+    for(int i=0;i<n-1;i++){
+        midIdx = i;
+        for(int j=i+1;j<n;j++){
+            if(ar[j]<ar[midIdx]){
+                midIdx=j;
+            }
+        }
+        swap(ar[i],ar[midIdx]);
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    int ar[n];
+    for(int i=0;i<n;i++){
+        cin>>ar[i];
+    }
+    selection(n,ar);
+    for(int i=0;i<n;i++){
+        cout<<ar[i]<<" ";
+    }
+}
